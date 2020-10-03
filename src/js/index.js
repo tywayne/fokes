@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const handleSuccess = () => {
     form.reset();
     form.querySelector('button[type="submit"]').innerHTML = "Submit";
-    form.querySelector('button[type="submit"]').attributes.disabled = false;
+    form.querySelector('button[type="submit"]').disabled = false;
     document.getElementById("form_success").classList.remove("hidden");
   };
 
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let url = "https://script.google.com/macros/s/AKfycbxXCMdXfCTcyKdKE7dgmnwVE_BbnL_40mVECslEKMQZVReen89N/exec";
 
     form.querySelector('button[type="submit"]').innerHTML = "Sending...";
-    form.querySelector('button[type="submit"]').attributes.disabled = true;
+    form.querySelector('button[type="submit"]').disabled = true;
     fetch(`${url}?${queryString}`).then(handleSuccess).catch(handleError);
   });
 });
