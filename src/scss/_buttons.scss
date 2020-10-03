@@ -1,0 +1,53 @@
+.btn,
+.btn:link,
+.btn:visited,
+input[type=submit],
+button[type=submit] {
+  background: color('navy-1');
+  color: color('cream-1');
+  cursor: pointer;
+  display: inline-block;
+  width: auto;
+  padding:  2rem 8rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-family: font('body');
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: color 0.3s ease, background 0.3s ease, border 0.3s ease;
+  text-decoration: none;
+  appearance: none;
+  border-radius: .4rem;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background: color('navy-2');
+    color:color('cream-1');
+  }
+
+  &:focus,
+  &:active {
+    outline-color: color('navy-2');
+    outline-offset: -4px;
+    outline-style: dotted;
+  }
+
+  &.disabled {
+    background: color('navy-2');
+  }
+}
+
+.disabled,
+button:disabled,
+input[type=submit]:disabled,
+input[type=button]:disabled {
+  cursor: default;
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+  filter: alpha(opacity=50);
+}

@@ -1,0 +1,27 @@
+/* ----------------------------------------------------------------
+Colors
+-----------------------------------------------------------------*/
+$color-map: (
+  "navy-1"   :#344B58,
+  "navy-2"   :#202F37,
+
+  "tan-1"    :#DFCDBC,
+  "tan-2"    :#BE9B79,
+
+  "gray-1"   :#CED1D1,
+  "gray-2"   :#9F9389,
+
+  "cream-1"  :#FDF9F5,
+
+  "white"    :#FFFFFF,
+);
+
+@function color($hue) {
+  $fetched-color: map-get($color-map, $hue);
+
+  @if type-of($fetched-color) == color {
+    @return $fetched-color;
+  } @else {
+    @error "Color `#{$hue}` not found. Make sure arguments are strings. Available options: #{map-keys($color-map)}";
+  }
+}

@@ -1,0 +1,233 @@
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: font('body');
+  font-style: normal;
+  background: color('white');
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: color('navy-1');
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin: 0 0 2rem;
+}
+
+a {
+  &:active,
+  &:link,
+  &:visited {
+    color: color('tan-2');
+    transition: color 0.2s ease;
+    text-decoration: underline;
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: color('navy-1');
+    transition: color 0.2s ease;
+  }
+
+  &:focus {
+    outline: 1px dotted color('navy-1');
+    outline-offset: 2px;
+  }
+}
+
+::-moz-selection {
+  background: color('tan-2');
+  color: color('white');
+  text-shadow: none;
+}
+
+::-webkit-selection {
+  background: color('tan-2');
+  color: color('white');
+  text-shadow: none;
+}
+
+::selection {
+  background: color('tan-2');
+  color: color('white');
+  text-shadow: none;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+    .h7 {
+  color: color('tan-1');
+  font-family: font('heading');
+  line-height: 1.1;
+  vertical-align: top;
+  margin-bottom: 1.6rem;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.h7 {
+  font-family: font('body');
+}
+
+.h7 {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Type Scale */
+.f-hero { font-size: 9.5rem;}
+h1, .h1 { font-size: 7rem; }
+h2, .h2 { font-size: 5.5rem; }
+h3, .h3 { font-size: 4.5rem; }
+h4, .h4 { font-size: 3.5rem; }
+h5, .h5 { font-size: 2.5rem; }
+h6, .h6 { font-size: 2rem; }
+.h7 { font-size: 1.4rem; }
+.p-lg { font-size: 3rem; }
+.p-md { font-size: 2rem; }
+.p-reg { font-size: 1.6rem; }
+.p-sm, small { font-size: 1.4rem; }
+
+@include breakpoint('tablet') {
+  .f-hero-m { font-size: 9.5rem; }
+  .h1-m { font-size: 7rem; }
+  .h2-m { font-size: 5.5rem; }
+  .h3-m { font-size: 4.5rem; }
+  .h4-m { font-size: 3.5rem; }
+  .h5-m { font-size: 2.5rem; }
+  .h6-m { font-size: 2rem; }
+  .h7-m { font-size: 1.4rem; }
+  .p-lg-m { font-size: 3rem; }
+  .p-md-m { font-size: 2rem; }
+  .p-reg-m { font-size: 1.6rem; }
+  .p-sm-m { font-size: 1.4rem; }
+}
+
+@include breakpoint('desktop') {
+  .f-hero-l { font-size: 9.5rem; }
+  .h1-l { font-size: 7rem; }
+  .h2-l { font-size: 5.5rem; }
+  .h3-l { font-size: 4.5rem; }
+  .h4-l { font-size: 3.5rem; }
+  .h5-l { font-size: 2.5rem; }
+  .h6-l { font-size: 2rem; }
+  .h7-l { font-size: 1.4rem; }
+  .p-lg-l { font-size: 3rem; }
+  .p-md-l { font-size: 2rem; }
+  .p-reg-l { font-size: 1.6rem; }
+  .p-sm-l { font-size: 1.4rem; }
+}
+
+@include breakpoint('desktop-large') {
+  .f-hero-xl { font-size: 9.5rem; }
+  .h1-xl { font-size: 7rem; }
+  .h2-xl { font-size: 5.5rem; }
+  .h3-xl { font-size: 4.5rem; }
+  .h4-xl { font-size: 3.5rem; }
+  .h5-xl { font-size: 2.5rem; }
+  .h6-xl { font-size: 2rem; }
+  .h7-xl { font-size: 1.4rem; }
+  .p-lg-xl { font-size: 3rem; }
+  .p-md-xl { font-size: 2rem; }
+  .p-reg-xl { font-size: 1.6rem; }
+  .p-sm-xl { font-size: 1.4rem; }
+}
+
+.measure {
+  max-width: 30em;
+
+  &--slim {
+    max-width: 20em;
+  }
+}
+
+hr {
+  width: 100%;
+  margin: 4.8rem 0;
+  border: 0;
+  height: 0;
+  border-top: none;
+  border-bottom: 1px solid color('gray-2');
+}
+
+
+ul,
+ol {
+  font-size: 1.6rem;
+  margin: 3.2rem 0;
+  line-height: 1.1;
+  padding-right: 1.6rem;
+
+  ul, ol {
+    margin: 0 1.6rem;
+  }
+
+  li {
+    list-style: disc inside;
+    margin: 0 0 1.6rem 0;
+    padding: 0;
+  }
+}
+
+ol li {
+  list-style: decimal inside;
+  margin: 0 0 1.6rem 0;
+  padding: 0;
+}
+
+
+/*
+  Text alignment at various breakpoints
+*/
+.tl  { text-align: left; }
+.tr  { text-align: right; }
+.tc  { text-align: center; }
+.tj  { text-align: justify; }
+
+@include breakpoint('tablet') {
+  .tl-m  { text-align: left; }
+  .tr-m  { text-align: right; }
+  .tc-m  { text-align: center; }
+  .tj-m  { text-align: justify; }
+}
+
+@include breakpoint('desktop') {
+  .tl-l  { text-align: left; }
+  .tr-l  { text-align: right; }
+  .tc-l  { text-align: center; }
+  .tj-l  { text-align: justify; }
+}
+
+@include breakpoint('desktop-large') {
+  .tl-xl  { text-align: left; }
+  .tr-xl  { text-align: right; }
+  .tc-xl  { text-align: center; }
+  .tj-xl  { text-align: justify; }
+}

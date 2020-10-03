@@ -1,0 +1,241 @@
+legend,
+label {
+  font-size: 1.4rem;
+  font-family: font('body');
+  font-style: normal;
+  font-weight: 700;
+  color: color('navy-1');
+  margin-bottom: 0.4rem;
+  display: inline-block;
+  cursor:pointer;
+
+  .form__field--error & {
+    color: color('gray-2');
+  }
+}
+
+input[type=text],
+input[type=search],
+input[type=password],
+input[type=tel],
+input[type=email],
+input[type=number],
+input[type=date] {
+  width: 100%;
+  background: color('white');
+  color: color('navy-1');
+  font-size: 1.6rem;
+  font-family: font('body');
+  padding: 1.6rem;
+  margin: 0;
+  border: 2px solid color('tan-1');
+  outline-color: color('tan-1');
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: .2s ease-in border, .2s ease-in outline-color;
+  border-radius: .4rem;
+
+  &:focus {
+    background: color('white');
+    border: 2px solid color('navy-1');
+    outline-color: color('navy-1');
+  }
+
+  .form__field--error & {
+    border-color: color('gray-2');
+  }
+}
+
+textarea {
+  width: 100%;
+  background: color('white');
+  color: color('navy-1');
+  font-size: 1.4rem;
+  font-family: font('body');
+  padding: 0.8em;
+  margin: 0;
+  border: 2px solid color('tan-1');
+  outline-color: color('tan-1');
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: .4rem;
+
+  &:focus {
+    background: color('white');
+    border: 2px solid color('navy-1');
+    outline-color: color('navy-1');
+  }
+
+  .form__field--error & {
+    border-color: color('gray-2');
+  }
+}
+
+.form__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include breakpoint('tablet') {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.form__field {
+  flex: 1 1 100%;
+  margin-bottom: 1.6rem;
+
+  @include breakpoint('tablet') {
+    margin-bottom: 0;
+  }
+}
+
+.form__field--half {
+  flex: 1 1 100%;
+
+  @include breakpoint('tablet') {
+    flex: 0 1 48%;
+  }
+}
+
+.form__field--checkbox {
+  display: block;
+  position: relative;
+  padding-left: 2.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  margin-bottom: .8rem;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ .checkmark {
+      background-color: color('navy-1');
+      border-color: color('navy-1');
+    }
+
+    &:checked ~ .checkmark:after {
+      display: block;
+    }
+  }
+
+  label {
+    margin-left: .8rem;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.6rem;
+    width: 1.6rem;
+    background-color: color('white');
+    border: 2px solid color('tan-1');
+    border-radius: .4rem;
+    transition: .2s ease-in background-color, .2s ease-in border-color;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: .5rem;
+      top: .1rem;
+      width: .5rem;
+      height: 1rem;
+      border: solid color('white');
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      transition: .2s ease-in background-color, .2s ease-in border-color, .2s ease-in opacity;
+    }
+  }
+}
+
+.form__field--radio {
+  display: block;
+  position: relative;
+  padding-left: 2.2rem;
+  font-size: 1rem;
+  user-select: none;
+
+  label {
+    font-weight: normal;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ .radio {
+      background-color: color('white');
+      border-color: color('navy-1');
+    }
+
+    &:checked ~ .radio:after {
+      opacity: 1;
+    }
+  }
+
+  .radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.6rem;
+    width: 1.6rem;
+    background-color: color('white');
+    border: 1px solid color('tan-1');
+    border-radius: .8rem;
+    transition: .2s ease-in background-color, .2s ease-in border-color;
+
+    &:after {
+      content: "";
+      position: absolute;
+      opacity: 0;
+      left: .2rem;
+      top: .2rem;
+      width: 1rem;
+      height: 1rem;
+      background-color: color('navy-1');
+      border-radius: .5rem;
+      transition: .2s ease-in background-color, .2s ease-in border-color, .2s ease-in opacity;
+    }
+  }
+}
+
+.form__note {
+  font-size: 1.4rem;
+  margin: 0.8rem 0 0 .8rem;
+  font-style: italic;
+  color: color('gray-2');
+
+  a {
+    display: inline-block;
+  }
+
+  .form__field--error & {
+    color: color('gray-2');
+  }
+}
+.form__actions {
+  margin: 1.6rem 0;
+  width: 100%;
+
+  @include breakpoint('tablet') {
+    width: unset;
+  }
+
+  .btn {
+    margin: 0;
+    margin-bottom: 1.6rem !important;
+    width: 100%;
+  }
+}

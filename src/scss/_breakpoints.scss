@@ -1,0 +1,27 @@
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 960px;
+$desktop-large-width: 1200px;
+
+$breakpoint-map: (
+  'mobile'             : (max-width: #{$mobile-width}) ,
+  'tablet'             : (min-width: #{$tablet-width}),
+  'tablet-only'        : (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}),
+  'tablet-down'        : (max-width: #{$tablet-width - 1px}),
+  'desktop'            : (min-width: #{$desktop-width}),
+  'desktop-down'       : (max-width: #{$desktop-width - 1px}),
+  'desktop-large'      : (min-width: #{$desktop-large-width}),
+  'desktop-large-down' : (max-width: #{$desktop-large-width - 1px}),
+);
+
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoint-map, $breakpoint) {
+    @media #{inspect(map-get($breakpoint-map, $breakpoint))} {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Breakpoint `#{$breakpoint}` not found. Make sure arguments are strings. Available breakpoints are: #{map-keys($breakpoint-map)}.";
+  }
+}

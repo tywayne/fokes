@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://use.typekit.net/tuj4ccr.css">
+  <link rel="stylesheet" href="./scss/main.scss">
+
+  <title>Helping families find caregivers</title>
+</head>
+<body>
+  <div class="site">
+
+    <div class="diagonal">
+      <header class="site-header">
+        <h1 class="h4 h2-m h1-xl tc">Helping families <br>find caregivers</h1>
+      </header>
+    </div>
+    <main class="site-main">
+      <form class="form" action="/">
+        <div class="form__row">
+          <div class="form__field form__field--half">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Name" />
+          </div>
+          <div class="form__field form__field--half">
+            <label for="name">Email</label>
+            <input id="email" name="email" type="email" placeholder="email@address.com" />
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="form__field form__field--half">
+            <label for="zip_code">Zip Code</label>
+            <input id="zip_code" name="zip" type="text" inputmode="numeric" placeholder="90210" pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$">
+          </div>
+          <div class="form__field form__field--half">
+            <label for="phone">Phone</label>
+            <input type="tel" name="phone" placeholder="555-555-5555" />
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="form__field form__field--checkbox">
+            <input type="checkbox" id="care_taker" name="care_taker" value="Are you a caretaker looking to earn extra income?"/>
+            <span class="checkmark"></span>
+            <label for="care_taker">Are you a caretaker looking to earn extra income?</label>
+          </div>
+          <div class="form__field form__field--checkbox">
+            <input type="checkbox" id="care_need" name="care_need" value="Are you a family in need of a qualified caretaker?"/>
+            <span class="checkmark"></span>
+            <label for="care_need">Are you a family in need of a qualified caretaker?</label>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="form__actions">
+            <button type="submit" class="btn">Submit</button>
+            <p class="p-sm measure--slim">** We will not sell your information but it will be added to a database for when the technology launches.</p>
+          </div>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script src="js/index.js" type="text/javascript"></script>
+</body>
+</html>

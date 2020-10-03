@@ -1,0 +1,57 @@
+.site {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+
+  @include breakpoint('desktop') {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+    align-items: center;
+  }
+}
+
+.diagonal {
+	background: color('navy-1');
+  transform: skewY(-8deg);
+  padding-top: 20%;
+  padding-bottom: 5%;
+  margin-top: -20%;
+  height: 100%;
+
+  @include breakpoint('desktop') {
+    transform: skewX(-8deg);
+    padding: 0;
+    margin: 0;
+    margin-left: -10rem;
+    padding-left: 5rem;
+    display: grid;
+    align-items: center;
+  }
+}
+
+.site-header {
+  transform: skewY(8deg);
+  padding: 20% 5%;
+  height: 100%;
+
+  @include breakpoint('desktop') {
+    transform: skewX(8deg);
+    padding: 0 5%;
+    height: unset;
+    margin-top: -20%;
+  }
+}
+
+.site-main {
+  padding: 20% 5%;
+
+  @include breakpoint('desktop') {
+    padding: 0 10%;
+  }
+
+  form {
+    margin-bottom: 0;
+  }
+}
+

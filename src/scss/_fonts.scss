@@ -1,0 +1,18 @@
+/* ----------------------------------------------------------------
+Font Families
+-----------------------------------------------------------------*/
+$font-map: (
+  'heading' : "sofia-pro, sans-serif",
+  'body'    : "sofia-pro, san-serif",
+  'mono'    : "'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace"
+);
+
+@function font($name) {
+  $fetched-font: map-get($font-map, $name);
+
+  @if type-of($fetched-font) == string {
+    @return unquote($fetched-font);
+  } @else {
+    @warn "Font `#{$name}` not found. Make sure arguments are strings. Available options: #{map-keys($font-map)}";
+  }
+}
