@@ -46,6 +46,18 @@
     <main class="site-main">
       <form class="form" action="/" id="signup_form">
         <div class="form__row">
+          <div class="form__field form__field--checkbox">
+            <input type="checkbox" id="care_taker" name="care_taker" value="checked"/>
+            <span class="checkmark"></span>
+            <label for="care_taker">Are you a caretaker looking to earn extra income?</label>
+          </div>
+          <div class="form__field form__field--checkbox">
+            <input type="checkbox" id="care_need" name="care_need" value="checked"/>
+            <span class="checkmark"></span>
+            <label for="care_need">Are you a family in need of a qualified caretaker?</label>
+          </div>
+        </div>
+        <div class="form__row">
           <div class="form__field form__field--half">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" placeholder="Name" required />
@@ -63,18 +75,6 @@
           <div class="form__field form__field--half">
             <label for="phone">Phone</label>
             <input type="tel" name="phone" placeholder="555-555-5555" required />
-          </div>
-        </div>
-        <div class="form__row">
-          <div class="form__field form__field--checkbox">
-            <input type="checkbox" id="care_taker" name="care_taker" value="checked"/>
-            <span class="checkmark"></span>
-            <label for="care_taker">Are you a caretaker looking to earn extra income?</label>
-          </div>
-          <div class="form__field form__field--checkbox">
-            <input type="checkbox" id="care_need" name="care_need" value="checked"/>
-            <span class="checkmark"></span>
-            <label for="care_need">Are you a family in need of a qualified caretaker?</label>
           </div>
         </div>
         <div class="form__row">
