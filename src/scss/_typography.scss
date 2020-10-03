@@ -12,6 +12,10 @@ body {
   color: color('navy-1');
 }
 
+.hidden {
+  display: none !important;
+}
+
 p {
   font-size: 1.6rem;
   line-height: 1.5;

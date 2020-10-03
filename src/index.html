@@ -17,35 +17,35 @@
       </header>
     </div>
     <main class="site-main">
-      <form class="form" action="/">
+      <form class="form" action="/" id="signup_form">
         <div class="form__row">
           <div class="form__field form__field--half">
             <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Name" />
+            <input id="name" name="name" type="text" placeholder="Name" required />
           </div>
           <div class="form__field form__field--half">
             <label for="name">Email</label>
-            <input id="email" name="email" type="email" placeholder="email@address.com" />
+            <input id="email" name="email" type="email" placeholder="email@address.com" required />
           </div>
         </div>
         <div class="form__row">
           <div class="form__field form__field--half">
             <label for="zip_code">Zip Code</label>
-            <input id="zip_code" name="zip" type="text" inputmode="numeric" placeholder="90210" pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$">
+            <input id="zip_code" name="zip" type="text" inputmode="numeric" placeholder="90210" required>
           </div>
           <div class="form__field form__field--half">
             <label for="phone">Phone</label>
-            <input type="tel" name="phone" placeholder="555-555-5555" />
+            <input type="tel" name="phone" placeholder="555-555-5555" required />
           </div>
         </div>
         <div class="form__row">
           <div class="form__field form__field--checkbox">
-            <input type="checkbox" id="care_taker" name="care_taker" value="Are you a caretaker looking to earn extra income?"/>
+            <input type="checkbox" id="care_taker" name="care_taker" value="checked"/>
             <span class="checkmark"></span>
             <label for="care_taker">Are you a caretaker looking to earn extra income?</label>
           </div>
           <div class="form__field form__field--checkbox">
-            <input type="checkbox" id="care_need" name="care_need" value="Are you a family in need of a qualified caretaker?"/>
+            <input type="checkbox" id="care_need" name="care_need" value="checked"/>
             <span class="checkmark"></span>
             <label for="care_need">Are you a family in need of a qualified caretaker?</label>
           </div>
@@ -55,6 +55,8 @@
             <button type="submit" class="btn">Submit</button>
             <p class="p-sm measure--slim">** We will not sell your information but it will be added to a database for when the technology launches.</p>
           </div>
+          <div class="banner banner--success hidden" id="form_success">Success, you're on the list! We'll reach out when we have more to share.</div>
+          <div class="banner banner--error hidden" id="form_error">Oops! There was an issue sending your info. Wait a second and try again.</div>
         </div>
       </form>
     </main>

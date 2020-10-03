@@ -1,0 +1,13 @@
+.banner {
+  padding: .8rem 1.6rem;
+  background: color('tan-1');
+  border: 2px solid color('tan-2');
+  color: color('navy-1');
+  border-radius: .4rem;
+}
+
+.banner--error {
+  background: color('red-1');
+  border-color: color('red-2');
+  color: color('red-2');
+}
