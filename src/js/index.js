@@ -18,19 +18,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    let formData = new FormData(form);
-    formData = Object.fromEntries(formData);
-
-    let queryString = Object.keys(formData)
-      .map((key) => {
-        return encodeURIComponent(key) + "=" + encodeURIComponent(formData[key]);
-      })
-      .join("&");
-
+    let formData = Object.fromEntries(new FormData(form));
     let url = "https://script.google.com/macros/s/AKfycbxXCMdXfCTcyKdKE7dgmnwVE_BbnL_40mVECslEKMQZVReen89N/exec";
 
     form.querySelector('button[type="submit"]').innerHTML = "Sending...";
     form.querySelector('button[type="submit"]').disabled = true;
-    fetch(`${url}?${queryString}`).then(handleSuccess).catch(handleError);
+    fetch(url, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(handleSuccess)
+      .catch(handleError);
   });
 });
